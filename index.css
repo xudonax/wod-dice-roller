@@ -1,0 +1,7 @@
+.results {
+    display: flex;
+}
+
+.results div {
+    flex: 0 0 50%;
+}

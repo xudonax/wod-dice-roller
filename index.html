@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World of Darkness dice roller</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <h1>World of Darkness dice roller</h1>
+        <strong>Werewolf the Apocalypse edition</strong>
+    </header>
+    <main id="content">
+        <section id="what-to-roll">
+            <aside>
+                <h5>Willpower re-rolls</h5>
+                <p>
+                    You can spend 1 point of Willpower to re-roll three or less normal dice. You can do this on any 
+                    Skill or Attribute roll, including those for gifts or other special advantages. You can also
+                    re-roll rage dice, unless you've rolled a Brutal outcome.
+                </p>
+                <p>
+                    Any points of Willpower you spend in this way count as superficial damage on your Willpower, and is
+                    marked as such on your Willpower track.
+                </p>
+                <cite>Werewolf the Apocalypse 5th Edition Core Rulebook, page 122</cite>
+            </aside>
+            <p>
+                Werewolf the Apocalypse uses custom d10 dice. While you could just roll a few different normal d10 and
+                convert the numbers to brutal failures, failures, successes, and critical successes you can also use
+                this website to roll the dice for you!
+            </p>
+            <p>
+                In the fields below you can enter how big your dice pool is, and how high your rage track is. Your dice
+                pool size is normally the sum of how many dots you have in an attribute and a skill. However, some
+                gifts require you to roll two attributes, or the amount of dots in your gift and an attribute.
+            </p>
+            <p>
+                When in doubt, ask your Story Teller or read the rules for your gift.
+            </p>
+            <form id="dice-form">
+                <p>
+                    <label for="dicepool">Dice pool</label>
+                    <input id="dicepool" name="dicepool" type="number" value="1" />
+                </p>
+                <p>
+                    <label for="ragedice">Rage dice</label>
+                    <input id="ragedice" name="ragedice" type="number" value="1" />
+                </p>
+                <button type="submit">Roll 🎲</button>
+            </form>
+        </section>
+        <section id="roll-results">
+            <h2 id="text-result">0 successes</h2>
+            <div class="results">
+                <div id="ragedice-results" class="left rage dice"></div>
+                <div id="dicepool-results" class="right regular dice"></div>
+            </div>
+
+            <button type="button" id="reroll-willpower">Willpower re-roll</button>
+            
+            <details>
+                <summary>Result of your dice roll</summary>
+                <p>
+                    This is what you rolled to get the above results:
+                </p>
+                <pre id="dice-result"></pre>
+            </details>
+        </section>
+    </main>
+    <footer>Footer!</footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
